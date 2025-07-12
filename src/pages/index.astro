@@ -1,11 +1,15 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Tecs from '@components/Tecs.astro';
+import Layout from '@layouts/Layout.astro';
 ---
 
 <Layout>
-	<Welcome />
+	<img src="/src/assets/images/foto_carlos.webp" alt="Imagen Carlos Moreno" class="hero-image" />
+	<h1>Carlos Moreno</h1>
+	<p>Desarrollador web con experiencia en proyectos de frontend y backend.</p>
+	<section id="about">
+		<h2>About Me</h2>
+		<p>Hola, soy Carlos Moreno, un apasionado del desarrollo web. Me especializo en crear aplicaciones web modernas y eficientes.</p>
+		<Tecs />
+	</section>
 </Layout>

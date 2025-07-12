@@ -1,6 +1,6 @@
 ---
-import Footer from "../components/Footer.astro";
-import Header from "../components/Header.astro";
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
 ---
 
 <!doctype html>
@@ -8,9 +8,22 @@ import Header from "../components/Header.astro";
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
+		<meta name="description" content="Portafolio donde se expondran proyectos y habilidades de Carlos Moreno con el fin de darse a conocer en el mundo del desarrollo" />
+
+		<meta name="twitter:card" content="sumary_large_image"/>
+		<meta name="twitter:site" content="@portafolioCarlosMoreno"/>
+		<meta name="twitter:creator" content="@carlosMoreno"/>
+		<meta name="twitter:title" content="Portafolio Carlos Moreno"/>
+		<meta name="twitter:description" content="Portafolio de Carlos Moreno"/>
+
+		<meta property="og:title" content="Portafolio Carlos Moreno"/>
+		<meta property="og:description" content="Portafolio de Carlos Moreno"/>
+		<meta property="og:image" content="/images/portafolio.png"/>
+		<meta property="og:locale" content="es_ES"/>
+		<meta property="og:type" content="website"/>
+
+		<title>Portafolio Carlos Moreno</title>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
 	</head>
 	<body>
 		<Header/>
