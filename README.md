@@ -1,2 +1,3 @@
-# Portafolio
-Portafolio con mi información personal y habilidades
+#Portafolio 
+
+Portafolio personal, que muestra mis habilidades en el desarrollo
