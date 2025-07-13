@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Astro",
+    "description": "Framework para construir sitios web rápidos y modernos.",
+    "link": "https://astro.build/"
+  },
+  {
+    "title": "Tailwind CSS",
+    "description": "Utilidad de clases para estilos rápidos.",
+    "link": "https://tailwindcss.com/"
+  },
+  {
+    "title": "React",
+    "description": "Biblioteca para construir interfaces de usuario.",
+    "link": "https://react.dev/"
+  }
+]

@@ -1,15 +1,26 @@
 ---
 import Tecs from '@components/Tecs.astro';
 import Layout from '@layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import fotoCarlos from '../assets/images/foto_carlos.webp';
 ---
 
+
 <Layout>
-	<img src="/src/assets/images/foto_carlos.webp" alt="Imagen Carlos Moreno" class="hero-image" />
-	<h1>Carlos Moreno</h1>
-	<p>Desarrollador web con experiencia en proyectos de frontend y backend.</p>
-	<section id="about">
-		<h2>About Me</h2>
-		<p>Hola, soy Carlos Moreno, un apasionado del desarrollo web. Me especializo en crear aplicaciones web modernas y eficientes.</p>
-		<Tecs />
+  <main class="bg-black text-white min-h-screen">
+	<div class="flex flex-col items-center p-4 pt-20">
+		<div class="flex items-center gap-6 mb-6">
+			<Image src={fotoCarlos} alt="Imagen Carlos Moreno" class:list="w-72 h-72 rounded-full object-cover border-4 border-gray-300 shadow-lg" />
+			<div>
+				<h1 class="text-3xl font-bold">Carlos Moreno</h1>
+				<p class="text-lg text-gray-400">Desarrollador web con experiencia en proyectos de frontend y backend.</p>
+			</div>
+		</div>
+  	</div>
+  	<section id="about">
+	  <h2 class="text-2xl font-semibold mb-2">Sobre Mi</h2>
+	  <p>Hola, soy Carlos Moreno, un apasionado del desarrollo web. Me especializo en crear aplicaciones web modernas y eficientes.</p>
+	  <Tecs />
 	</section>
+  </main>
 </Layout>

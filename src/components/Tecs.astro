@@ -1,11 +1,51 @@
 ---
 import TecCard from '@components/Tec-card.astro';
+import tecs from '../assets/data/tecs.json';
 ---
 
 
-<TecCard
-    image="/images/astro.png"
-    title="Astro"
-    description="Framework para construir sitios web rápidos y modernos."
-    link="https://astro.build/"
-/>
+<style>
+  .tec-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+  }
+  .tec-marquee-track {
+    display: flex;
+    gap: 1rem;
+    min-width: max-content;
+    animation: marquee 25s linear infinite;
+  }
+  .fade {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 2rem;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .fade-left {
+    left: 0;
+    background: linear-gradient(to right, #000 0%, transparent 100%);
+  }
+  .fade-right {
+    right: 0;
+    background: linear-gradient(to left, #000 0%, transparent 100%);
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+</style>
+
+
+
+<div class="tec-marquee">
+  <div class="fade fade-left"></div>
+  <div class="fade fade-right"></div>
+  <div class="tec-marquee-track">
+    {Array(3).fill(tecs).flat().map(tec => (
+      <TecCard title={tec.title} description={tec.description} link={tec.link} />
+    ))}
+  </div>
+</div>
