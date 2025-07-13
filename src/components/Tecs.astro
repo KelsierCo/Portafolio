@@ -1,8 +1,17 @@
 ---
 import TecCard from '@components/Tec-card.astro';
-import tecs from '../assets/data/tecs.json';
+import tecs from '@assets/data/tecs.json';
 ---
 
+<div class="tec-marquee p-8">
+  <div class="fade fade-left"></div>
+  <div class="fade fade-right"></div>
+  <div class="tec-marquee-track">
+    {Array(3).fill(tecs).flat().map(tec => (
+      <TecCard title={tec.title} image={tec.image} />
+    ))}
+  </div>
+</div>
 
 <style>
   .tec-marquee {
@@ -37,15 +46,3 @@ import tecs from '../assets/data/tecs.json';
     100% { transform: translateX(-50%); }
   }
 </style>
-
-
-
-<div class="tec-marquee">
-  <div class="fade fade-left"></div>
-  <div class="fade fade-right"></div>
-  <div class="tec-marquee-track">
-    {Array(3).fill(tecs).flat().map(tec => (
-      <TecCard title={tec.title} description={tec.description} link={tec.link} />
-    ))}
-  </div>
-</div>

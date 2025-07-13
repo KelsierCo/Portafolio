@@ -10,6 +10,7 @@
       "@layouts/*": ["./src/layouts/*"],
       "@pages/*": ["./src/pages/*"],
       "@utils/*": ["./src/utils/*"],
+      "@assets/*": ["./src/assets/*"],
     },
     "types": ["astro/client", "astro/astro-jsx"]
   }

@@ -1,17 +1,54 @@
 [
   {
+    "title": "c#",
+    "image": "/Csharpe.png"
+  },
+  {
+    "title": "Java",
+    "image": "/Java.png"
+  },
+  {
+    "title": "JavaScript",
+    "image": "/JavaScript.png"
+  },
+  {
+    "title": "Python",
+    "image": "/Python.png"
+  },
+  {
+    "title":"React",
+    "image": "/React.png"
+  },
+  {
     "title": "Astro",
-    "description": "Framework para construir sitios web rápidos y modernos.",
-    "link": "https://astro.build/"
+    "image": "/Astro.png"
   },
   {
-    "title": "Tailwind CSS",
-    "description": "Utilidad de clases para estilos rápidos.",
-    "link": "https://tailwindcss.com/"
+    "title": ".NET",
+    "image": "/DotNet.png"
   },
   {
-    "title": "React",
-    "description": "Biblioteca para construir interfaces de usuario.",
-    "link": "https://react.dev/"
+    "title": "Django",
+    "image": "/Django.png"
+  },
+  {
+    "title": "Spring Boot",
+    "image": "/SpringBoot.png"
+  },
+  {
+    "title": "FastAPI",
+    "image": "/FastAPI.png"
+  },
+  {
+    "title": "PostgreSQL",
+    "image": "/PostgreSQL.png"
+  },
+  {
+    "title": "MongoDB",
+    "image": "/MongoDB.png"
+  },
+  {
+    "title": "Redis",
+    "image": "/Redis.png"
   }
 ]
