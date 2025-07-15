@@ -1,0 +1,36 @@
+
+
+<header class="flex justify-between items-center p-8 bg-background text-primary w-full fixed">
+  <h1 class="text-xl font-bold">Portafolio</h1>
+  <nav class="flex-1 flex justify-center">
+    <ul class="flex space-x-8 text-lg font-semibold">
+      <li><a href="#about" class="hover:text-blue-400 transition">Sobre mi</a></li>
+      <li><a href="#projects" class="hover:text-blue-400 transition">Proyectos</a></li>
+      <li><a href="#contact" class="hover:text-blue-400 transition">Contáctame</a></li>
+      <li><a href="#blog" class="hover:text-blue-400 transition">Blog</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  header {
+    background: transparent;
+    animation: header-blur-scroll 0.3s linear both;
+    animation-timeline: scroll();
+    animation-range: 0 250px;
+    border-bottom: 1px solid transparent;
+  }
+
+  @keyframes header-blur-scroll {
+    0% {
+      backdrop-filter: blur(0px);
+      border-color: transparent;
+    }
+    100% {
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.5);
+      padding-bottom: 20px;
+      border-color: black;
+    }
+  }
+</style>

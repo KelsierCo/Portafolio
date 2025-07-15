@@ -11,6 +11,8 @@
       "@pages/*": ["./src/pages/*"],
       "@utils/*": ["./src/utils/*"],
       "@assets/*": ["./src/assets/*"],
+      "@data/*": ["./src/assets/data/*"],
+      "@sections/*": ["./src/sections/*"],
     },
     "types": ["astro/client", "astro/astro-jsx"]
   }

@@ -1,0 +1,50 @@
+[
+  {
+    "title": "c#",
+    "image": "/Csharpe.png"
+  },
+  {
+    "title": "Java",
+    "image": "/Java.png"
+  },
+  {
+    "title": "JavaScript",
+    "image": "/JavaScript.png"
+  },
+  {
+    "title": "Python",
+    "image": "/Python.png"
+  },
+  {
+    "title":"React",
+    "image": "/React.png"
+  },
+  {
+    "title": "Astro",
+    "image": "/Astro.png"
+  },
+  {
+    "title": ".NET",
+    "image": "/DotNet.png"
+  },
+  {
+    "title": "Spring Boot",
+    "image": "/SpringBoot.png"
+  },
+  {
+    "title": "FastAPI",
+    "image": "/FastAPI.png"
+  },
+  {
+    "title": "PostgreSQL",
+    "image": "/PostgreSQL.png"
+  },
+  {
+    "title": "MongoDB",
+    "image": "/MongoDB.png"
+  },
+  {
+    "title": "Redis",
+    "image": "/Redis.png"
+  }
+]

@@ -1,6 +1,6 @@
 ---
 import TecCard from '@components/Tec-card.astro';
-import tecs from '@assets/data/tecs.json';
+import tecs from '@assets/const/tecs.json';
 ---
 
 <div class="tec-marquee p-8">
@@ -23,7 +23,7 @@ import tecs from '@assets/data/tecs.json';
     display: flex;
     gap: 1rem;
     min-width: max-content;
-    animation: marquee 25s linear infinite;
+    animation: marquee 30s linear infinite;
   }
   .fade {
     position: absolute;
