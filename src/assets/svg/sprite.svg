@@ -1,0 +1,9 @@
+<svg width="400" height="200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Línea curva suave -->
+  <path d="M 50 100 
+           C 120 80, 180 120, 250 100 
+           S 350 100, 400 100" 
+        stroke="black" 
+        stroke-width="2" 
+        fill="transparent" />
+</svg>

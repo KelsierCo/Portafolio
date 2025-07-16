@@ -27,7 +27,9 @@ import Header from "@sections/Header.astro";
 	</head>
 	<body>
 		<Header/>
-		<slot />
+		<main class="pb-20">
+			<slot />
+		</main>
 		<Footer/>
 	</body>
 </html>
@@ -37,7 +39,12 @@ import Header from "@sections/Header.astro";
 	body {
 		margin: 0;
 		width: 100%;
-		height: 100%;
-		background-color: #084887;
+		height: auto;
+		background: linear-gradient(to bottom, 
+			#084887 0%,     /* Color sólido hasta el 60% */
+			#084887 30%, 
+			#010A13 100%    /* Degradado desde el 60% al 100% */
+		);
+		background-repeat: no-repeat;
 	}
 </style>
