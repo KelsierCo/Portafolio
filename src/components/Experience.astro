@@ -15,3 +15,45 @@ import { EXPERIENCE } from "@assets/const/experience";
         />
     ))}
 </div>
+
+<script>
+    const items = document.querySelectorAll('[data-exp]');
+    const flags = document.querySelectorAll('[data-flag]');
+
+    function showExperience(company: string) {
+        items.forEach(item => {
+            const htmlItem = item as HTMLElement;
+            if (htmlItem.dataset.exp === company) {
+                htmlItem.classList.remove('hidden');
+            } else {
+                htmlItem.classList.add('hidden');
+            }
+        });
+    }
+
+    flags.forEach(flag => {
+        flag.addEventListener('click', () => {
+            const flagValue = (flag as HTMLElement).dataset.flag;
+            if (flagValue) {
+                const company = flagValue.replace('data-flag-', '');
+                showExperience(company);
+            }
+        });
+    });
+
+    flags.forEach(flag => {
+        flag.addEventListener('click', () => {
+            const company = (flag as HTMLElement).dataset.flag;
+            if (company) {
+                showExperience(company);
+            }
+        });
+    });
+
+    if (items[0]) {
+        const exp = (items[0] as HTMLElement).dataset.exp;
+        if (typeof exp === "string") {
+            showExperience(exp);
+        }
+    }
+</script>
