@@ -1,0 +1,21 @@
+---
+import { PROJECTS } from '@assets/const/project';
+---
+
+<ol>
+    {
+        PROJECTS.map((project) => (
+            <li class="mb-6">
+                <div class="flex flex-col md:flex-row items-center gap-4">
+                    <img src={project.image} alt={project.title} class="w-full md:w-1/3 rounded-lg shadow-md" />
+                    <div class="md:w-2/3">
+                        <h2 class="text-xl font-semibold text-primary">{project.title}</h2>
+                        <p class="text-gray-700">{project.description}</p>
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">Ver proyecto</a>
+                    </div>
+                </div>
+            </li>
+        ))
+    }
+</ol>
+

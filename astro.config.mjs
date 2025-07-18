@@ -1,10 +1,18 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import tailwindcss from '@astrojs/tailwind';
 
 import preact from '@astrojs/preact';
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwindcss(), preact()],
+  integrations: [preact()],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
+
+  build: {
+    inlineStylesheets: 'always',
+  }
 });

@@ -1,0 +1,17 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+import ExperienceLine from './ExpirienceLine.astro';
+import { EXPERIENCE } from "@assets/const/experience";
+---
+<div>
+    <ExperienceLine />
+    {EXPERIENCE.map((exp) => (
+        <ExperienceItem
+            title={exp.title}
+            company={exp.company}
+            startDate={exp.startDate}
+            endDate={exp.endDate}
+            description={exp.description}
+        />
+    ))}
+</div>

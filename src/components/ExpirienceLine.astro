@@ -1,0 +1,86 @@
+---
+import { EXPERIENCE } from '@assets/const/experience';
+import avion from '@assets/images/avion.webp';
+import { Image } from 'astro:assets';
+
+type Points = { x: number; y: number};
+
+function getCubicBezierXYatT(
+  p0: Points, p1: Points, p2: Points, p3: Points, t: number
+): Points {
+  const x = Math.pow(1 - t, 3) * p0.x + 3 * Math.pow(1 - t, 2) * t * p1.x + 3 * (1 - t) * Math.pow(t, 2) * p2.x + Math.pow(t, 3) * p3.x;
+  
+  const y = Math.pow(1 - t, 3) * p0.y + 3 * Math.pow(1 - t, 2) * t * p1.y + 3 * (1 - t) * Math.pow(t, 2) * p2.y + Math.pow(t, 3) * p3.y;
+
+  return { x, y };
+}
+
+const n = EXPERIENCE.length;
+const startPoint = { x: 0, y: 50 };
+const controlPoint1 = { x:200, y: 0 };
+const controlPoint2 = { x: 700, y: 100 };
+const endPoint = { x: 900, y: 50 };
+
+const flagLength = 109;
+const triangleLength = 16;
+
+const flagPositions = Array.from({ length: n }, (_, i) => {
+  const t = (i + 1) / (n + 1);
+  const center = getCubicBezierXYatT(startPoint, controlPoint1, controlPoint2, endPoint, t);
+  const curvelength = 900;
+  const offsetPx = 20;
+  const offsetT = offsetPx / curvelength;
+  const left = getCubicBezierXYatT(startPoint, controlPoint1, controlPoint2, endPoint, t - offsetT);
+  const right = getCubicBezierXYatT(startPoint, controlPoint1, controlPoint2, endPoint, t + offsetT);
+  return { center, left, right };
+}); 
+---
+
+<div class="flex mb-28 mt-8">
+    <svg class="absolute w-full -translate-x-32 translate-y-12" height="160" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 0 50 C 200 0, 700 100, 900 50" stroke="black" stroke-width="2" fill="transparent" />
+            {flagPositions.map((pos, index) => (
+                <g>
+                <path
+                    d={`
+                    M ${pos.left.x} ${pos.left.y}
+                    L ${pos.right.x} ${pos.right.y}
+                    L ${pos.right.x} ${pos.right.y + flagLength}
+                    L ${pos.left.x} ${pos.left.y + flagLength}
+                    Z
+                    `}
+                    fill={index % 2 === 0 ? '#31E981' : '#AE8ABC'}
+                />
+                <polygon
+                    points={`
+                    ${pos.left.x},${pos.left.y + flagLength - 1}
+                    ${pos.center.x},${pos.center.y + flagLength - 1}
+                    ${pos.left.x},${pos.left.y + flagLength + triangleLength}
+                    `}
+                    fill={index % 2 === 0 ? '#31E981' : '#AE8ABC'}
+                />
+                <polygon
+                    points={`
+                    ${pos.center.x},${pos.center.y + flagLength - 1}
+                    ${pos.right.x},${pos.right.y + flagLength - 1}
+                    ${pos.right.x},${pos.right.y + flagLength + triangleLength}
+                    `}
+                    fill={index % 2 === 0 ? '#31E981' : '#AE8ABC'}
+                />
+                <text
+                    x={pos.center.x}
+                    y={pos.center.y + (flagLength / 2)}
+                    text-anchor="middle"
+                    dominant-baseline="middle"
+                    fill="#082D0F"
+                    font-size={18}
+                    font-family="inherit"
+                    style={{ cursor: 'pointer', writingMode: 'vertical-rl', glyphOrientationVertical: 0 }}
+                >
+                    {EXPERIENCE[index].company}
+                </text>
+                </g>
+            ))}
+    </svg>
+    <Image src={avion} alt="Avión" class="scale-x-[-1]" />
+</div>

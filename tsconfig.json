@@ -33,7 +33,10 @@
       ],
       "@sections/*": [
         "./src/sections/*"
-      ]
+      ],
+      "@styles/*": [
+        "./src/styles/*"
+      ],
     },
     "types": [
       "astro/client",
