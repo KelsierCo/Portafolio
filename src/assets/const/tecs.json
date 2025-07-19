@@ -1,50 +1,62 @@
 [
   {
     "title": "c#",
-    "image": "/Csharpe.png"
+    "image": "/Csharpe.png",
+    "category": "Lenguages"
   },
   {
     "title": "Java",
-    "image": "/Java.png"
+    "image": "/Java.png",
+    "category": "Lenguages"
   },
   {
     "title": "JavaScript",
-    "image": "/JavaScript.png"
+    "image": "/JavaScript.png",
+    "category": "Lenguages"
   },
   {
     "title": "Python",
-    "image": "/Python.png"
+    "image": "/Python.png",
+    "category": "Lenguages"
   },
   {
     "title":"React",
-    "image": "/React.png"
+    "image": "/React.png",
+    "category": "Ui"
   },
   {
     "title": "Astro",
-    "image": "/Astro.png"
+    "image": "/Astro.png",
+    "category": "Ui"
   },
   {
     "title": ".NET",
-    "image": "/DotNet.png"
+    "image": "/DotNet.png",
+    "category": "Backend"
   },
   {
     "title": "Spring Boot",
-    "image": "/SpringBoot.png"
+    "image": "/SpringBoot.png",
+    "category": "Backend"
   },
   {
     "title": "FastAPI",
-    "image": "/FastAPI.png"
+    "image": "/FastAPI.png",
+    "category": "Backend"
   },
   {
     "title": "PostgreSQL",
-    "image": "/PostgreSQL.png"
+    "image": "/PostgreSQL.png",
+    "category": "Database"
   },
   {
     "title": "MongoDB",
-    "image": "/MongoDB.png"
+    "image": "/MongoDB.png",
+    "category": "Database"
   },
   {
     "title": "Redis",
-    "image": "/Redis.png"
+    "image": "/Redis.png",
+    "category": "Database"
   }
 ]
