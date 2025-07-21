@@ -6,6 +6,7 @@ import TitleSection from '@components/TitleSection.astro';
 import Layout from '@layouts/Layout.astro';
 import Projects from '@components/Projects.astro';
 import Experience from '@components/Experience.astro';
+import Tecs from '@/components/Tecs.astro';
 ---
 
 
@@ -27,7 +28,12 @@ import Experience from '@components/Experience.astro';
 		<Projects />
 	</SectionContainer>
 	<SectionContainer>
+		<TitleSection>Acerca de Mi</TitleSection>
 		<AboutMe />
+	</SectionContainer>
+	<SectionContainer>
+		<TitleSection>Tecnologías</TitleSection>
+		<Tecs />
 	</SectionContainer>
   </main>
 </Layout>
