@@ -6,7 +6,7 @@ import LinkedIn from '@assets/svg/linkedin.svg';
 export const SOCIAL: Social[] = [
     {
         name: 'linkedin',
-        url: '',
+        url: 'https://www.linkedin.com/in/carlos-moreno-713090235/',
         image: {
             logo: LinkedIn,
             width: 24,
@@ -15,7 +15,7 @@ export const SOCIAL: Social[] = [
     },
     {
         name: 'github',
-        url: '',
+        url: 'https://github.com/KelsierCo',
         image: {
             logo: GitHub,
             width: 24,

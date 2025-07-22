@@ -3,7 +3,7 @@ import ExperienceItem from "./ExperienceItem.astro";
 import ExperienceLine from './ExpirienceLine.astro';
 import { EXPERIENCE } from "@assets/const/experience";
 ---
-<div>
+<div class="flex flex-col gap-16">
     <ExperienceLine />
     {EXPERIENCE.map((exp) => (
         <ExperienceItem

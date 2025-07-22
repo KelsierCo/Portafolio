@@ -11,18 +11,16 @@ import Tecs from '@/components/Tecs.astro';
 
 
 <Layout>
-  <main class=" text-white min-h-screen">
+  <main class="relative z-10 text-white">
 	<SectionContainer>
 		<Hero>
 			</slot>
 		</Hero>
 	</SectionContainer>
-	<div class="space-y-10">
-	<SectionContainer>
+	<SectionContainer id="#experiencia">
 		<TitleSection>Experiencia</TitleSection>
 		<Experience />
 	</SectionContainer>
-	<div class="space-y-10">
 	<SectionContainer>
 		<TitleSection>Proyectos</TitleSection>
 		<Projects />
@@ -35,5 +33,6 @@ import Tecs from '@/components/Tecs.astro';
 		<TitleSection>Tecnologías</TitleSection>
 		<Tecs />
 	</SectionContainer>
+	<div class="bg-[url('/ciudad.webp')] w-full h-[300px] z-10"></div>
   </main>
 </Layout>

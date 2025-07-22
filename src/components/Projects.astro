@@ -4,7 +4,7 @@ import buho from '@assets/images/buho.webp';
 import ProjectItem from './ProjectItem.astro';
 ---
 
-<ol class="mt-12">
+<div class="mt-12">
     {
         PROJECTS.map((project) => (
             <ProjectItem
@@ -15,7 +15,7 @@ import ProjectItem from './ProjectItem.astro';
             />
         ))
     }
-</ol>
+</div>
 
 {PROJECTS.length < 2 && (
   <div class="flex flex-col items-center justify-center mt-16">

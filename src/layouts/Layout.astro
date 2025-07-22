@@ -27,8 +27,10 @@ import '@styles/global.css';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 	</head>
 	<body>
+		<div id="bg-clouds" class="absolute z-0 sky-bg inset-0 pointer-events-none bg-fade-center"/>
+		<div id="bg-stars" class="absolute z-0 stars-bg inset-0 pointer-events-none bg-fade-center bg-fade-top"/>
 		<Header/>
-		<main class="pb-20">
+		<main>
 			<slot />
 		</main>
 		<Footer/>
@@ -43,9 +45,29 @@ import '@styles/global.css';
 		height: auto;
 		background: linear-gradient(to bottom, 
 			#084887 0%,     /* Color sólido hasta el 60% */
-			#084887 30%, 
-			#010A13 100%    /* Degradado desde el 60% al 100% */
+			#084887 10%, 
+			#010A13 70%
 		);
 		background-repeat: no-repeat;
 	}
 </style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+    const bgClouds = document.getElementById('bg-clouds');
+    const bgStars = document.getElementById('bg-stars');
+
+    const pageHeight = document.documentElement.scrollHeight;
+    const cloudsHeight = pageHeight * 0.6;
+
+    if (bgClouds) {
+      bgClouds.style.height = cloudsHeight + 'px';
+      bgClouds.style.top = '0px';
+    }
+
+    if (bgStars) {
+      bgStars.style.height = (pageHeight - cloudsHeight) + 'px';
+      bgStars.style.top = cloudsHeight + 'px';
+    }
+  });
+</script>
