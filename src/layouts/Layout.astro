@@ -53,11 +53,14 @@ import '@styles/global.css';
 </style>
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
+  function updateBackgroundHeights() {
     const bgClouds = document.getElementById('bg-clouds');
     const bgStars = document.getElementById('bg-stars');
 
-    const pageHeight = document.documentElement.scrollHeight;
+    const viewportHeight = window.innerHeight;
+    const bodyHeight = document.body.offsetHeight;
+    const pageHeight = Math.max(bodyHeight, viewportHeight);
+
     const cloudsHeight = pageHeight * 0.6;
 
     if (bgClouds) {
@@ -69,5 +72,32 @@ import '@styles/global.css';
       bgStars.style.height = (pageHeight - cloudsHeight) + 'px';
       bgStars.style.top = cloudsHeight + 'px';
     }
-  });
+  }
+
+  function setupObservers() {
+    // Llamar la función inicialmente
+    updateBackgroundHeights();
+
+    // Ajustar al redimensionar la ventana
+    window.addEventListener('resize', updateBackgroundHeights);
+
+    // Observar cambios en el DOM (como carga de contenido dinámico)
+    const observer = new MutationObserver(() => {
+      updateBackgroundHeights();
+    });
+    observer.observe(document.body, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      characterData: true,
+    });
+
+    // Observar cambios de tamaño en elementos (usando ResizeObserver)
+    const resizeObserver = new ResizeObserver(() => {
+      updateBackgroundHeights();
+    });
+    resizeObserver.observe(document.body);
+  }
+
+  document.addEventListener('DOMContentLoaded', setupObservers);
 </script>
