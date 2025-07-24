@@ -1,9 +1,23 @@
+---
+import GitHubIcon from "@assets/svg/github.svg"
+---
 
-<div class="relative z-10 bg-black text-white p-4 flex flex-col items-center">
-    <p>2025 - Carlos Moreno</p>
-    <nav>
-    <ul class="flex space-x-4 mt-2">
-        <li><a href="/contact">Contact Me</a></li>
+<div class="relative z-10 bg-black text-white p-6 flex flex-col md:flex-row items-center justify-between">
+  <!-- Información personal o derechos -->
+  <p class="text-sm mb-2 md:mb-0">© 2025 Carlos Moreno.</p>
+
+  <!-- Navegación secundaria -->
+  <nav>
+    <ul class="flex flex-col sm:flex-row items-center gap-4 text-sm">
+      <li><a href="#about" class="hover:underline">Sobre mí</a></li>
+      <li><a href="#projects" class="hover:underline">Proyectos</a></li>
+      <li><a href="#contact" class="hover:underline">Contáctame</a></li>
+      <li>
+        <a href="https://github.com/KelsierCo/Portafolio/tree/main" target="_blank" class="hover:underline flex items-center gap-1">
+          <GitHubIcon class="w-5 h-5 fill-white" />
+          Repositorio
+        </a>
+      </li>
     </ul>
-    </nav>
+  </nav>
 </div>
