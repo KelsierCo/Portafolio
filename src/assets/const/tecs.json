@@ -32,7 +32,7 @@
   {
     "title": ".NET",
     "image": "/DotNet.png",
-    "category": "Backend"
+    "category": "aprendiendo"
   },
   {
     "title": "Spring Boot",
@@ -52,11 +52,16 @@
   {
     "title": "MongoDB",
     "image": "/MongoDB.png",
-    "category": "Database"
+    "category": "aprendiendo"
   },
   {
     "title": "Redis",
     "image": "/Redis.png",
     "category": "Database"
+  },
+  {
+    "title": "Postman",
+    "image": "/Postman.png",
+    "category": "Backend"
   }
 ]

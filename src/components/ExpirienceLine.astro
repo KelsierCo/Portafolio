@@ -21,14 +21,14 @@ const controlPoint1 = { x:200, y: 0 };
 const controlPoint2 = { x: 700, y: 100 };
 const endPoint = { x: 900, y: 50 };
 
-const flagLength = 109;
-const triangleLength = 16;
+const flagLength = 135;
+const triangleLength = 30;
 
 const flagPositions = Array.from({ length: n }, (_, i) => {
   const t = (i + 1) / (n + 1);
   const center = getCubicBezierXYatT(startPoint, controlPoint1, controlPoint2, endPoint, t);
   const curvelength = 900;
-  const offsetPx = 20;
+  const offsetPx = 40;
   const offsetT = offsetPx / curvelength;
   const left = getCubicBezierXYatT(startPoint, controlPoint1, controlPoint2, endPoint, t - offsetT);
   const right = getCubicBezierXYatT(startPoint, controlPoint1, controlPoint2, endPoint, t + offsetT);
@@ -39,7 +39,7 @@ const flagPositions = Array.from({ length: n }, (_, i) => {
 <div class="flex">
     <Image src={avion} alt="Avión" class="scale-x-[-1] translate-x-2" />
     <svg class="translate-y-16" height="160" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 0 50 C 200 0, 700 100, 900 50" stroke="black" stroke-width="3" fill="transparent" />
+        <path d="M 0 50 C 200 0, 700 100, 900 50" stroke="black" stroke-width="8" fill="transparent" />
             {flagPositions.map((pos, index) => (
                 <g data-flag={`${EXPERIENCE[index].company}`} class="cursor-pointer">
                 <path
@@ -74,12 +74,20 @@ const flagPositions = Array.from({ length: n }, (_, i) => {
                     text-anchor="middle"
                     dominant-baseline="middle"
                     fill="#082D0F"
-                    font-size={18}
-                    font-family="inherit"
-                    style={{ cursor: 'pointer', writingMode: 'vertical-rl', glyphOrientationVertical: 0 }}
+                    font-size="25"
+                    font-family="Inria Sans, sans-serif"
+                    font-weight="800"
+                    letter-spacing="0.1em"
+                    style={{
+                        cursor: 'pointer',
+                        writingMode: 'vertical-rl',
+                        glyphOrientationVertical: 0,
+                        whiteSpace: 'pre-line',
+                    }}
                 >
-                    {EXPERIENCE[index].company}
+                   {EXPERIENCE[index].company}
                 </text>
+
                 </g>
             ))}
     </svg>
