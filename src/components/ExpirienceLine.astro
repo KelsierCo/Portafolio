@@ -37,8 +37,8 @@ const flagPositions = Array.from({ length: n }, (_, i) => {
 ---
 
 <div class="flex">
-    <Image src={avion} alt="Avión" class="scale-x-[-1] translate-x-2" />
-    <svg class="translate-y-16" height="160" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
+    <Image src={avion} alt="Avión" class="scale-x-[-1] translate-x-2 h-24 w-24 md:h-auto md:w-auto" />
+    <svg class="md:translate-y-16" height="160" viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg">
         <path d="M 0 50 C 200 0, 700 100, 900 50" stroke="black" stroke-width="8" fill="transparent" />
             {flagPositions.map((pos, index) => (
                 <g data-flag={`${EXPERIENCE[index].company}`} class="cursor-pointer">
