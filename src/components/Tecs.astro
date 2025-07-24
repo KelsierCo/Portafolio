@@ -6,9 +6,9 @@ import tecs from '@assets/const/tecs.json';
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
   <div class="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
     {Array.from(new Set(tecs.filter(t => t.category !== 'aprendiendo').map(t => t.category))).map(cat => (
-      <div class="bg-gray-800 rounded-xl p-4 flex flex-col gap-4 shadow-lg">
+      <div class="bg-gray-800 rounded-xl p-4 flex flex-col gap-4 shadow-lg mx-auto md:mx-0 md:p-8">
         <h2 class="text-xl font-bold text-white mb-2 capitalize">{cat}</h2>
-        <div class="grid grid-cols-2 gap-4">
+        <div id="caja" class="grid grid-cols-2 gap-4">
           {tecs.filter(tec => tec.category === cat).map(tec => (
             <TecCard title={tec.title} image={tec.image} />
           ))}
@@ -16,12 +16,20 @@ import tecs from '@assets/const/tecs.json';
       </div>
     ))}
   </div>
-  <div class="bg-gray-800 rounded-xl p-4 flex flex-col gap-4 shadow-lg">
+  <div class="bg-gray-800 rounded-xl p-4 flex flex-col gap-4 shadow-lg mx-auto md:mx-0 translate-x-2 ,md:translate-x-0">
     <h2 class="text-xl font-bold text-white mb-2">Aprendiendo</h2>
-    <div class="grid grid-cols-1 gap-4">
-      {tecs.filter(tec => tec.category === 'aprendiendo').map(tec => (
-        <TecCard title={tec.title} image={tec.image} />
-      ))}
+    <div class="grid grid-cols-2 md:grid-cols-1 gap-4">
+      {(() => {
+        const aprendiendo = tecs.filter(tec => tec.category === 'aprendiendo');
+        if (aprendiendo.length === 0) {
+          return [1, 2].map(i => (
+            <div class="h-24 w-24 p-2 opacity-40" aria-hidden="true"></div>
+          ));
+        }
+        return aprendiendo.map(tec => (
+          <TecCard title={tec.title} image={tec.image} />
+        ));
+      })()}
     </div>
   </div>
 </div>
